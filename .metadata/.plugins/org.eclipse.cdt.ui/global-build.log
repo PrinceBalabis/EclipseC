@@ -1,0 +1,32 @@
+01:46:36 **** Clean-only build of configuration Debug for project dfgsfdgdfg ****
+make clean 
+rm -rf  ./src/dfgsfdgdfg.o  ./src/dfgsfdgdfg.d  dfgsfdgdfg
+ 
+01:46:36 **** Build of configuration Debug for project dfgsfdgdfg ****
+make all 
+Building file: ../src/dfgsfdgdfg.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/dfgsfdgdfg.d" -MT"src/dfgsfdgdfg.d" -o "src/dfgsfdgdfg.o" "../src/dfgsfdgdfg.c"
+../src/dfgsfdgdfg.c:25:24: warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        printf("Minnesadress f<9A>r x: %d\n", &x);
+                              ^~~~
+../src/dfgsfdgdfg.c:25:37: warning: format specifies type 'int' but the argument has type 'int *' [-Wformat]
+        printf("Minnesadress f<9A>r x: %d\n", &x);
+                                       ~~     ^~
+../src/dfgsfdgdfg.c:26:24: warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        printf("Minnesadress f<9A>r y: %d\n", &y);
+                              ^~~~
+../src/dfgsfdgdfg.c:26:37: warning: format specifies type 'int' but the argument has type 'int *' [-Wformat]
+        printf("Minnesadress f<9A>r y: %d\n", &y);
+                                       ~~     ^~
+4 warnings generated.
+Finished building: ../src/dfgsfdgdfg.c
+ 
+Building target: dfgsfdgdfg
+Invoking: MacOS X C Linker
+gcc  -o "dfgsfdgdfg"  ./src/dfgsfdgdfg.o   
+Finished building target: dfgsfdgdfg
+ 
+01:46:40 **** Incremental Build of configuration Debug for project dfgsfdgdfg ****
+make all 
+make: Nothing to be done for `all'.
