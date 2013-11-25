@@ -14,7 +14,7 @@ void testswap(int*, int*);
 
 int main(void) {
 	puts("!!!VARIABLE SWAP WITH POINTER!!!");
-	//SŠtter vanliga variabler som ska swapas
+	//SÃ¤tter vanliga variabler som ska swapas
 	int x = 111;
 	int y = 222;
 
@@ -22,22 +22,20 @@ int main(void) {
 	printf("Variabel x: %d\n", x);
 	printf("Variabel y: %d\n", y);
 
-	printf("Minnesadress fšr x: %d\n", &x);
-	printf("Minnesadress fšr y: %d\n", &y);
+	printf("Minnesadress fï¿½r x: %d\n", &x);
+	printf("Minnesadress fï¿½r y: %d\n", &y);
 
-	// Kšr swappen med pekare
+	// Kï¿½r swappen med pekare
 	testswap(&x, &y);
 	// Skriver ut variablerna efter swap med pekare
 	printf("Variabel efter swap x: %d\n", x);
 	printf("Variabel efter swap y: %d", y);
 }
 
-void testswap(int*px, int*py)
+void testswap(int *px, int*py)
 {
     int temp;
     temp = *px;
     *px = *py;
     *py = temp;
-
-
 }
