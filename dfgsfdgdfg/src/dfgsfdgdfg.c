@@ -25,7 +25,7 @@ int main(void) {
 	printf("Minnesadress f�r x: %d\n", &x);
 	printf("Minnesadress f�r y: %d\n", &y);
 
-	// K�r swappen med pekare
+	// Kör swappen med pekare
 	testswap(&x, &y);
 	// Skriver ut variablerna efter swap med pekare
 	printf("Variabel efter swap x: %d\n", x);
