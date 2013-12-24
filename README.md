@@ -1,4 +1,4 @@
-EclipseCarduino
+Eclipse-C
 ===============
 
-C-programmering med Eclipse
+Träning med C-programmering i Eclipse
