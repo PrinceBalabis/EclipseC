@@ -1,0 +1,23 @@
+09:19:58 **** Build of configuration Debug for project TestRun ****
+make all 
+Building file: ../src/testMain.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testMain.d" -MT"src/testMain.d" -o "src/testMain.o" "../src/testMain.c"
+../src/testMain.c:6:2: warning: implicit declaration of function 'prinf' is invalid in C99 [-Wimplicit-function-declaration]
+        prinf("hello: %d", testint);
+        ^
+1 warning generated.
+Finished building: ../src/testMain.c
+ 
+Building target: TestRun
+Invoking: MacOS X C Linker
+gcc  -o "TestRun"  ./src/testMain.o   
+Undefined symbols for architecture x86_64:
+  "_prinf", referenced from:
+      _main in testMain.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [TestRun] Error 1
+
+09:19:58 Build Finished (took 363ms)
+
