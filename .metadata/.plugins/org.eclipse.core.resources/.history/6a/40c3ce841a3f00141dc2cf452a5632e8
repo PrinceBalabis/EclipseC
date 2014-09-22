@@ -1,0 +1,89 @@
+/*
+ * adc.c
+ *
+ *  Created on: Sep 17, 2014
+ *      Author: Prince
+ */
+
+#include "unity.h"
+#include "test_adc.h"
+#include "adc.h"
+
+void setUp(void) {
+}
+
+void tearDown(void) {
+}
+
+void resetTest(void) {
+	tearDown();
+	setUp();
+}
+
+/*
+ * Test if ADC-register pointers works correctly
+ */
+void test_adc_register_pointers(){
+
+	TEST_ASSERT_EQUAL_PTR(0x400C0000u, *p_ADC_CR);
+	TEST_ASSERT_EQUAL_PTR(0x400C0004u, *p_ADC_MR);
+	TEST_ASSERT_EQUAL_PTR(0x400C0010u, *p_ADC_CHER);
+	TEST_ASSERT_EQUAL_PTR(0x400C0014u, *p_ADC_CHDR);
+	TEST_ASSERT_EQUAL_PTR(0x400C0018u, *p_ADC_CHSR);
+	TEST_ASSERT_EQUAL_PTR(0x400C0020u, *p_ADC_LCDR);
+	TEST_ASSERT_EQUAL_PTR(0x400C0050u, *p_ADC_CDR0);
+	TEST_ASSERT_EQUAL_PTR(0x400C00E4u, *p_ADC_WPMR);
+
+}
+
+/*
+ * Checking that ADC channel 0 is enabled
+ */
+void test_adc_initialized_correctly(void) {
+
+	// ADC reset with prescal = 1
+	adc_init(1);
+
+	// Enable channel and check if that channel is enabled
+	TEST_ASSERT_TRUE(adc_enable_channel(ADC_CHANNEL_0));
+}
+
+/*
+ * Test 12 bit conversion with ADC channel 0
+ */
+void test_adc_12bit(void) {
+
+	// ADC reset with prescal = 1
+	adc_init(1);
+
+	// Enable specific channel
+	adc_enable_channel(channel);
+
+	// Read the specific channel
+	adc_read_channel(channel);
+}
+
+/*
+ * Test 10 bit conversion with ADC channel 0
+ */
+void test_adc_10bit(void) {
+
+	// ADC reset with prescal = 1
+	adc_init(1);
+
+	// Set ADC to 10 bit
+	adc_set_lowres();
+
+	// Enable specific channel
+	adc_enable_channel(channel);
+
+	// Read the specific channel
+	adc_read_channel(channel);
+}
+
+/*
+ * Switch channel
+ */
+
+
+

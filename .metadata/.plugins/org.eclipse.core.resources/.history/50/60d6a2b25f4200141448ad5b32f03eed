@@ -1,0 +1,67 @@
+/*
+ * adc.c
+ *
+ *  Created on: Sep 17, 2014
+ *      Author: Prince
+ */
+
+#include "unity.h"
+#include "test_adc.h"
+
+
+/*
+ * Checking that ADC channel 0 is enabled
+ */
+void test_adc_channel_enabled(void) {
+	// Chosen channel to test
+	uint8_t channel = ADC_CHANNEL_0;
+
+	// Enable channel and check if that channel is enabled
+	TEST_ASSERT_TRUE(adc_enable_channel(channel));
+}
+
+/*
+ * Test 12 bit conversion with ADC channel 0
+ */
+void test_adc_12bit(void) {
+	pmc_start_peripheral_clock(PMC_PERIPHERAL_ADC);
+
+	// 12 Bit should be enabled as default
+	TEST_ASSERT_TRUE(ADC_MR & (0x0u << 4));
+
+	// Set ADC to 12 bit
+	adc_set_resolution(12);
+
+	// Test if ADC is still set as 12 bit
+	TEST_ASSERT_TRUE(ADC_MR & (0x0u << 4));
+}
+
+/*
+ * Test 10 bit conversion with ADC channel 0
+ */
+void test_adc_10bit(void) {
+
+	pmc_start_peripheral_clock(PMC_PERIPHERAL_ADC);
+
+	// Chosen channel to test
+	uint8_t channel = ADC_CHANNEL_0;
+
+	// Test if ADC is not set as 10 bit
+	TEST_ASSERT_TRUE(ADC_MR & (0x1u << 4));
+
+	// Set ADC to 10 bit
+	adc_set_resolution(10);
+
+	// Enable specific channel
+	adc_enable_channel(channel);
+
+	// Test if ADC is set as 10 bit
+	TEST_ASSERT_TRUE(ADC_MR & (0x1u << 4));
+
+
+}
+
+/*
+ * Switch channel
+ */
+

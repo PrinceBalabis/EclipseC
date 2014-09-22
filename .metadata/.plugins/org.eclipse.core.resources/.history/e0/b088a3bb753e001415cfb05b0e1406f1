@@ -1,0 +1,11 @@
+/*
+ * adc.c
+ *
+ *  Created on: Sep 17, 2014
+ *      Author: Prince
+ */
+
+
+void test_adc(void) {
+	TEST_ASSERT_TRUE(1);
+}

@@ -1,0 +1,22 @@
+15:03:00 **** Incremental Build of configuration Debug for project HelloWorldArduinoDue ****
+make all 
+Building file: ../src/io_uart.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wpadded -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal  -g3 -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_STDOUT -D__SAM3X8E__ -I"../include" -I"../system/include" -I"../system/include/CMSIS" -I"../system/include/sam3x" -std=gnu11 -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -MMD -MP -MF"src/io_uart.d" -MT"src/io_uart.o" -c -o "src/io_uart.o" "../src/io_uart.c"
+In file included from ../src/io_uart.c:16:0:
+../include/io_uart.h:42:1: warning: padding struct size to alignment boundary [-Wpadded]
+ } uart_options_t;
+ ^
+../src/io_uart.c: In function 'uart_receive_char':
+../include/io_uart.h:51:19: warning: conversion to 'char' from 'uint32_t' may alter its value [-Wconversion]
+ #define UART_RHR (*p_UART_RHR)
+                   ^
+../src/io_uart.c:108:13: note: in expansion of macro 'UART_RHR'
+  char chr = UART_RHR;
+             ^
+Finished building: ../src/io_uart.c
+ 
+make: *** No rule to make target `../src/main.cpp', needed by `src/main.o'.  Stop.
+
+15:03:00 Build Finished (took 114ms)
+

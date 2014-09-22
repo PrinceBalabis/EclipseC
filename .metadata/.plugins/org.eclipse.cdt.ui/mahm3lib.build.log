@@ -1,0 +1,10 @@
+16:21:09 **** Clean-only build of configuration Debug for project mahm3lib ****
+make clean 
+
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+
+16:21:09 Build Finished (took 67ms)
+

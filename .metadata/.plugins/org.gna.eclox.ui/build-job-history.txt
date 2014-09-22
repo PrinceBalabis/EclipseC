@@ -1,1 +1,2 @@
 /DoxygenTest/DoxygenTest.doxyfile
+/mahm3lib/mahm3lib.doxyfile
